@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>星座测试</title>
+    <style>
+        .main {
+            width: 100%;
+            max-width: 420px;
+            border: solid 1px #ccc;
+            height: 600px;
+            margin: 0px auto;
+        }
+
+        .banner img {
+            width: 100%;
+        }
+
+        .fun {
+            background: rgb(238, 198, 152);
+            height: 100px;
+            width: 42%;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 5px;
+            float: left;
+            margin-top: 10px;
+        }
+
+        .fun img {
+            width: 100px;
+            float: left;
+        }
+
+        .fun span {
+            float: left;
+            display: inline-block;
+            margin-top: 40px;
+        }
+
+        .item span {
+            width: 120px;
+            display: inline-block;
+        }
+
+        .item input {
+            width: 240px;
+            height: 40px;
+        }
+
+        .item {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+        .btn_div {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .btn_div input {
+            width: 100px;
+            height: 40px;
+            margin: 0px auto;
+        }
+
+        #result {
+            color: red;
+            font-size: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function cesuan() {
+            var name1 = document.getElementById("name1").value;
+            var name2 = document.getElementById("name2").value;
+            if ((name1 == '天蝎座' && name2 == '魔羯座') || (name1 == '魔羯座' && name2 == '天蝎座')) {
+                //alert("你们有缘分")
+                document.getElementById("result").innerHTML = '你们有缘分'
+            }
+            else {
+                //alert("你们缘分不足")
+                document.getElementById("result").innerHTML = '你们缘分不足';
+            }
+        }
+    </script>
 </head>
+
 <body>
-    
+    <div class="main">
+        <div class="banner">
+            <img src="image/yuan.jpeg">
+        </div>
+        <div class="content">
+            <div class="item">
+                <span>你的星座：</span><input type="text" id="name1" />
+            </div>
+            <div class="item">
+                <span>他/她的星座：</span><input type="text" id="name2" />
+            </div>
+            <div class="btn_div">
+                <input type="button" value="测算" onclick="cesuan()" />
+            </div>
+            <div id="result">
+
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
